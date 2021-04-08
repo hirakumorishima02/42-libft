@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 11:56:59 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/08 07:48:32 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/08 09:47:40 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_strrchr (const char *s, int c);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
 size_t	ft_strlcpy(char *dest, char *src, size_t size);
 size_t	ft_strlen(const char *str);
+
 /*
 **static int		ft_strncmp(const char *s1, const char *s2, int n);
 ** static int		find_length(const char *array);
