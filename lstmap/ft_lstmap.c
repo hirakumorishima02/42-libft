@@ -6,11 +6,34 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 09:26:33 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/13 10:53:26 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/13 11:26:02 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
+	return ;
+}
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
+	}
+}
 
 t_list	*ft_lstnew(void *content)
 {
@@ -53,11 +76,17 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 	t_list	*new;
 	t_list	*elm;
 
-	if (!f || !del)
+	if (!f || !lst)
 		return (NULL);
+	new = NULL;
 	while (lst)
 	{
 		elm = ft_lstnew((*f)(lst->content));
+		if (!elm)
+		{
+			ft_lstclear(&elm, del);
+			return (NULL);
+		}
 		ft_lstadd_back(&new, elm);		
 		lst = lst->next;
 	}

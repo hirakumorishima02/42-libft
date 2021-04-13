@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 07:42:56 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/13 08:41:20 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/13 11:25:45 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	del(void *lst)
 	free(lst);
 }
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *tmp;
-	if (lst)
+	t_list	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		while (*lst)
-		{
-			tmp = (*lst)->next;
-			del(*lst);
-			*lst = tmp;
-		}
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
 }
 
