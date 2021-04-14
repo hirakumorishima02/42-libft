@@ -6,11 +6,11 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 10:59:00 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/08 07:27:36 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 06:09:33 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
@@ -18,8 +18,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char		*d_arry;
 	const unsigned char	*s_arry;
 
-	d_arry = dst;
-	s_arry = src;
+	d_arry = (unsigned char *)dst;
+	s_arry = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{
@@ -28,6 +28,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 			break ;
 		i++;
 	}
-	d_arry[i + 1] = '\0';
 	return (dst);
 }

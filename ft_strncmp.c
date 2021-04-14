@@ -6,18 +6,18 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 09:17:12 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/08 06:22:21 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 06:49:08 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && i <= n)
+	while (s1[i] == s2[i] && i < n)
 	{
 		if (s1[i] != '\0')
 			i++;

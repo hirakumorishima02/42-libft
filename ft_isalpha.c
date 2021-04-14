@@ -6,13 +6,13 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 09:37:51 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/08 07:24:54 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 07:00:30 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (c >= 'A' && c <= 'z')
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
 	return (0);
 }

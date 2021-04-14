@@ -6,14 +6,13 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 08:42:15 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/12 08:10:41 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 09:12:32 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static void		cul_len_digit(int n, int *digit, int *len)
+static void	cul_len_digit(int n, int *digit, int *len)
 {
 	*digit = 1;
 	*len = 1;
@@ -29,7 +28,7 @@ static void		cul_len_digit(int n, int *digit, int *len)
 	}
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		digit;
 	int		len;
@@ -38,6 +37,8 @@ char			*ft_itoa(int n)
 
 	cul_len_digit(n, &digit, &len);
 	rep = (char *)malloc(sizeof(*rep) * (len + 1));
+	if (!rep)
+		return (NULL);
 	i = 0;
 	if (n < 0)
 	{

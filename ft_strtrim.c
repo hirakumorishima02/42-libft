@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 06:01:28 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/12 08:41:55 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 07:21:18 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	search(char const *s1, char const *set, int dir)
 {
-	int i;
-	int j;
-	int flag;
+	int	i;
+	int	j;
+	int	flag;
 
 	if (dir > 0)
 		i = 0;
@@ -38,7 +38,7 @@ static int	search(char const *s1, char const *set, int dir)
 	return (i);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		front;
 	int		back;

@@ -6,30 +6,20 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 07:53:46 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/08 11:16:14 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 06:34:04 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-static size_t	cul_size(char *array)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	size_t length;
+	size_t	d_size;
+	size_t	s_size;
+	size_t	i;
 
-	length = 0;
-	while (array[length] != '\0')
-		length++;
-	return (length);
-}
-
-size_t			ft_strlcat(char *dest, char *src, size_t size)
-{
-	size_t d_size;
-	size_t s_size;
-	size_t i;
-
-	d_size = cul_size(dest);
-	s_size = cul_size(src);
+	d_size = ft_strlen(dest);
+	s_size = ft_strlen(src);
 	if (d_size >= size)
 		return (s_size + size);
 	i = 0;
@@ -39,5 +29,8 @@ size_t			ft_strlcat(char *dest, char *src, size_t size)
 		i++;
 	}
 	dest[d_size + i] = '\0';
-	return (d_size + s_size);
+	if (d_size >= size)
+		return (s_size + size);
+	else
+		return (d_size + s_size);
 }
