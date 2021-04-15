@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_sub_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/07 09:17:12 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/15 09:16:43 by hmorishi         ###   ########.fr       */
+/*   Created: 2021/04/08 08:31:01 by hmorishi          #+#    #+#             */
+/*   Updated: 2021/04/14 07:14:21 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*src1;
-	unsigned char	*src2;
+	size_t	i;
+	char	*arry;
 
-	src1 = (unsigned char *)s1;
-	src2 = (unsigned char *)s2;
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	arry = (char *)malloc(sizeof(char) * (len + 1));
+	if (!arry)
+		return (NULL);
 	i = 0;
-	while (src1[i] == src2[i] && i < n)
+	while (i < len && s[i] != '\0')
 	{
-		if (src1[i] == '\0' && src2[i] == '\0')
-			return (0);
+		arry[i] = s[start + i];
 		i++;
 	}
-	if (i == n)
-		return (0);
-	else
-		return (src1[i] - src2[i]);
+	arry[i] = '\0';
+	return (arry);
 }

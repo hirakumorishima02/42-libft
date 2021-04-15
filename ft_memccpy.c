@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 10:59:00 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 06:09:33 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/15 09:15:12 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		d_arry[i] = s_arry[i];
 		if (s_arry[i] == (const unsigned char)c)
-			break ;
+			return ((&d_arry[i + 1]));
 		i++;
 	}
-	return (dst);
+	return (NULL);
 }

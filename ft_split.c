@@ -6,23 +6,16 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 08:08:36 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 09:10:30 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/15 09:33:14 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	charcmp(char c, char *charset)
+static char	cmp(char c, char charset)
 {
-	int	i;
-
-	i = 0;
-	while (charset[i] != '\0')
-	{
-		if (c == charset[i])
-			return (1);
-		i++;
-	}
+	if (c == charset)
+		return (1);
 	return (0);
 }
 
@@ -39,18 +32,20 @@ static void	ft_strcpy(char *box, char *src, int len)
 	box[i] = '\0';
 }
 
-static char	**memory_allocate(const char *str, char *charset)
+static char	**memory_allocate(const char *str, char charset)
 {
 	size_t	i;
 	int		len;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	len = 0;
 	while (i <= ft_strlen(str))
 	{
-		if (charcmp(str[i], charset) || str[i] == '\0')
+		if (cmp(str[i], charset) || str[i] == '\0')
 		{
-			if (i != 0 && !charcmp(str[i - 1], charset))
+			if (i != 0 && !cmp(str[i - 1], charset))
 				len++;
 		}
 		i++;
@@ -65,24 +60,24 @@ char	**ft_split(char const *s, char c)
 	size_t		i;
 	size_t		j;
 
-	box = memory_allocate(s, &c);
+	box = memory_allocate(s, c);
+	if (!box)
+		return (NULL);
 	i = -1;
 	j = 0;
 	len = 0;
 	while (++i <= ft_strlen(s))
 	{
-		if ((charcmp(s[i], &c) || s[i] == '\0')
-			&& (len > 0 && !charcmp(s[i - 1], &c)))
+		if ((cmp(s[i], c) || s[i] == '\0') && (len > 0 && !cmp(s[i - 1], c)))
 		{
 			box[j] = (char *)malloc(len + 1);
 			ft_strcpy(box[j], (char *)&s[i - len], len);
 			j++;
 			len = 0;
 		}
-		else if (!charcmp(s[i], &c))
+		else if (!cmp(s[i], c))
 			len++;
 	}
-	box[j] = NULL;
-	free(box);
+	box[j] = 0;
 	return (box);
 }

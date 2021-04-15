@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 10:53:56 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 09:27:11 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 11:35:06 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ char	*ft_strdup(const char *src)
 {
 	char	*dest;
 
-	if (src == NULL)
-		return (NULL);
 	dest = (char *)malloc(sizeof(*dest) * ft_strlen(src) + 1);
 	if (!dest)
 		return (NULL);

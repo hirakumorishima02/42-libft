@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 08:25:51 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 06:42:13 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 10:15:09 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,8 @@ char	*ft_strrchr(const char *s, int c)
 			p = s;
 		s++;
 	}
-	return ((char *)p);
+	if (c == '\0')
+		return ((char *)s);
+	else
+		return ((char *)p);
 }

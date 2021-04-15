@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 15:33:41 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/13 11:29:37 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/15 09:14:16 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*l_elm;
 
-	if (lst)
+	if (!lst)
+		return ;
+	if (!*lst)
 	{
-		l_elm = ft_lstlast(*lst);
-		l_elm->next = new;
-	}
-	else
 		*lst = new;
+		return ;
+	}
+	l_elm = ft_lstlast(*lst);
+	l_elm->next = new;
 }

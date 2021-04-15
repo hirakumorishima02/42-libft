@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 08:48:39 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 06:47:06 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/14 11:21:59 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 char	*ft_strnstr(const char *hystk, const char *ndl, size_t len)
 {
-	size_t	f_len;
-	size_t	s_len;
+	size_t	n;
+	size_t	i;
 
-	f_len = ft_strlen(ndl);
-	s_len = 0;
+	n = strlen(ndl);
+	i = 0;
 	if (ndl[0] == '\0')
 		return ((char *)hystk);
-	while (hystk[s_len] != '\0' && s_len < len)
+	while (hystk[i] && i < len)
 	{
-		if (hystk[s_len] == ndl[0])
+		if (hystk[i] == ndl[0])
 		{
-			if (ft_strncmp(&hystk[s_len], &ndl[0], f_len) == 0)
-				return ((char *)&hystk[s_len]);
+			if (ft_strncmp(&hystk[i], &ndl[0], n) == 0 && i + n <= len)
+				return ((char *)&hystk[i]);
 		}
-		s_len++;
+		i++;
 	}
 	return (NULL);
 }
