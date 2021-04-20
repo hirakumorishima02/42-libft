@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 06:36:30 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 09:17:39 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 06:49:53 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!p)
 		return (NULL);
 	i = 0;
-	while (*s)
+	while (s[i])
 	{
-		p[i] = f(i, *s++);
+		p[i] = f(i, s[i]);
 		i++;
 	}
 	p[i] = '\0';

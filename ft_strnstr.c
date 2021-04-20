@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 08:48:39 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 11:21:59 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 08:36:33 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *hystk, const char *ndl, size_t len)
 	size_t	n;
 	size_t	i;
 
-	n = strlen(ndl);
+	n = ft_strlen(ndl);
 	i = 0;
 	if (ndl[0] == '\0')
 		return ((char *)hystk);

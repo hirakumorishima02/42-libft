@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 09:17:12 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/15 09:16:43 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 08:05:59 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*src1;
-	unsigned char	*src2;
+	size_t				i;
+	const unsigned char	*src1;
+	const unsigned char	*src2;
 
 	src1 = (unsigned char *)s1;
 	src2 = (unsigned char *)s2;

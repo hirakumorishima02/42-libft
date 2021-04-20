@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 09:35:21 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/15 09:13:23 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 06:17:30 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ static int	ft_skip(const char *str, int *sign)
 	while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
 		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-			*sign = -1;
+		*sign = -1;
 		i++;
 	}
+	else if (str[i] == '+')
+		i++;
 	return (i);
 }
 
@@ -40,7 +41,7 @@ int	ft_atoi(const char *str)
 	i = ft_skip(str, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (result > 922337203685477580)
+		if (result > LONG_MAX_VAL)
 		{
 			if (sign == 1)
 				return (-1);

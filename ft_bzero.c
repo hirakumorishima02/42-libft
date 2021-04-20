@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 15:05:42 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 09:59:23 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 06:01:31 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		arry[i] = '\0';
 		i++;
 	}
-	return ;
 }

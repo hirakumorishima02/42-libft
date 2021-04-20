@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 06:01:28 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/15 07:55:12 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 07:20:14 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	back = search(s1, set, -1);
 	len = back - front + 1;
 	if (len <= 0)
-		return (ft_strdup(""));
+		return ("");
 	arry = ft_substr(s1, front, len);
 	if (!arry)
 		return (NULL);

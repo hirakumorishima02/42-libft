@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:37:44 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 09:26:46 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 06:04:06 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	const unsigned char	*s_arry;
 
 	d_arry = (unsigned char *)dst;
-	s_arry = (unsigned char *)src;
+	s_arry = (const unsigned char *)src;
 	if (n == 0 || d_arry == s_arry)
 		return (dst);
 	i = 0;

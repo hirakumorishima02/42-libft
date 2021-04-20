@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 07:52:42 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/15 06:29:30 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 06:06:03 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
 	size_t	i;
-	size_t	len;
 
 	if (!dest || !src)
 		return (0);
@@ -28,8 +27,5 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 		i++;
 	}
 	dest[i] = '\0';
-	len = 0;
-	while (src[len] != '\0')
-		len++;
-	return (len);
+	return (ft_strlen(src));
 }

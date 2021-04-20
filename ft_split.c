@@ -6,11 +6,19 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 08:08:36 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/15 09:33:14 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/16 08:04:46 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	**ft_free(char **box, int i)
+{
+	while (i--)
+		free(box[i]);
+	free(box);
+	return (0);
+}
 
 static char	cmp(char c, char charset)
 {
@@ -32,11 +40,12 @@ static void	ft_strcpy(char *box, char *src, int len)
 	box[i] = '\0';
 }
 
-static char	**memory_allocate(const char *str, char charset)
+static char	**memory_allocate(const char *str, char charset, size_t *length)
 {
 	size_t	i;
 	int		len;
 
+	*length = 0;
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -60,24 +69,24 @@ char	**ft_split(char const *s, char c)
 	size_t		i;
 	size_t		j;
 
-	box = memory_allocate(s, c);
+	box = memory_allocate(s, c, &len);
 	if (!box)
 		return (NULL);
 	i = -1;
 	j = 0;
-	len = 0;
 	while (++i <= ft_strlen(s))
 	{
 		if ((cmp(s[i], c) || s[i] == '\0') && (len > 0 && !cmp(s[i - 1], c)))
 		{
 			box[j] = (char *)malloc(len + 1);
-			ft_strcpy(box[j], (char *)&s[i - len], len);
-			j++;
+			if (!box[j])
+				return (ft_free(&box[j], i));
+			ft_strcpy(box[j++], (char *)&s[i - len], len);
 			len = 0;
 		}
 		else if (!cmp(s[i], c))
 			len++;
 	}
-	box[j] = 0;
+	box[j] = NULL;
 	return (box);
 }
