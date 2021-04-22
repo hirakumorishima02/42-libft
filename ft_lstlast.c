@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 10:55:26 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/13 11:34:33 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/22 13:47:05 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst)
 	{
-		if (!lst -> next)
+		if (!lst->next)
 			return (lst);
 		lst = lst->next;
 	}

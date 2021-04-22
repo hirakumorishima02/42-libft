@@ -6,7 +6,7 @@
 #    By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 09:51:21 by hmorishi          #+#    #+#              #
-#    Updated: 2021/04/16 12:11:44 by hmorishi         ###   ########.fr        #
+#    Updated: 2021/04/22 13:46:48 by hmorishi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ ${NAME}: ${OBJS}
 
 
 bonus: ${NAME} ${OBJSBONUS}
-		ar rcs ${NAME} ${OBJS} ${OBJBONUS}
+		ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
 
 all:	${NAME}
 

@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 08:08:36 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/16 08:04:46 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/22 14:02:38 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static void	ft_strcpy(char *box, char *src, int len)
 static char	**memory_allocate(const char *str, char charset, size_t *length)
 {
 	size_t	i;
+	size_t	s_len;
 	int		len;
 
 	*length = 0;
@@ -50,7 +51,8 @@ static char	**memory_allocate(const char *str, char charset, size_t *length)
 		return (NULL);
 	i = 0;
 	len = 0;
-	while (i <= ft_strlen(str))
+	s_len = ft_strlen(str);
+	while (i <= s_len)
 	{
 		if (cmp(str[i], charset) || str[i] == '\0')
 		{

@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 09:35:21 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/16 06:17:30 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/22 13:52:01 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_skip(const char *str, int *sign)
 
 int	ft_atoi(const char *str)
 {
-	int		i;
+	size_t	i;
 	int		sign;
 	long	result;
 

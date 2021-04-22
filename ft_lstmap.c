@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 09:26:33 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/13 11:28:17 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/22 13:48:28 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		elm = ft_lstnew((*f)(lst->content));
 		if (!elm)
 		{
-			ft_lstclear(&elm, del);
+			ft_lstclear(&new, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&new, elm);

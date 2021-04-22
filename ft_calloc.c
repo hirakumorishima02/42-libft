@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 10:33:34 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/16 06:31:36 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/22 13:57:51 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*p;
 	size_t	res;
 
+	if (count * size > INT_MAX)
+		return (NULL);
 	if (!count || !size)
 		res = 1;
 	else

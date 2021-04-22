@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 07:53:46 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/14 06:34:04 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/22 13:51:01 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,5 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 		i++;
 	}
 	dest[d_size + i] = '\0';
-	if (d_size >= size)
-		return (s_size + size);
-	else
-		return (d_size + s_size);
+	return (d_size + s_size);
 }
