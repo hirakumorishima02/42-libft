@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 09:35:21 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/22 13:52:01 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:02:27 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 	i = ft_skip(str, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (result > LONG_MAX_VAL)
+		if (result > (LONG_MAX - (str[i] - '0')) / 10)
 		{
 			if (sign == 1)
 				return (-1);

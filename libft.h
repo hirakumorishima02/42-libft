@@ -6,13 +6,12 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 11:56:59 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/22 13:55:57 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:02:56 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define LONG_MAX_VAL 922337203685477580
 
 # include <stdio.h>
 # include <stdlib.h>

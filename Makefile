@@ -6,7 +6,7 @@
 #    By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 09:51:21 by hmorishi          #+#    #+#              #
-#    Updated: 2021/04/22 13:46:48 by hmorishi         ###   ########.fr        #
+#    Updated: 2021/04/27 10:51:55 by hmorishi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ BONUS = ft_lstnew.c ft_lstadd_front.c \
 		ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-OBJS = ${SRCS:.c=.o}
+OBJS = $(SRCS:.c=.o)
 
-OBJSBONUS = ${BONUS:.c=.o}
+OBJSBONUS = $(BONUS:.c=.o)
 
 GCC = gcc -Wall -Wextra -Werror
 
@@ -35,24 +35,23 @@ NAME = libft.a
 
 RM = rm -f
 
-${NAME}: ${OBJS}
-		ar rcs ${NAME} ${OBJS}
-		ranlib ${NAME}
+$(NAME): $(OBJS)
+		ar rcs $(NAME) $(OBJS)
+		ranlib $(NAME)
 
 %.o: %.c
-		${GCC} ${INC} -c $< -o ${<:.c=.o}
+		$(GCC) $(INC) -c $< -o $(<:.c=.o)
 
+all:	$(NAME)
 
-bonus: ${NAME} ${OBJSBONUS}
-		ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
-
-all:	${NAME}
+bonus: $(NAME) $(OBJSBONUS)
+		ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
 
 clean:
-		${RM} ${OBJS} ${OBJSBONUS}
+		$(RM) $(OBJS) $(OBJSBONUS)
 
 fclean:	clean
-		${RM} ${NAME}
+		$(RM) $(NAME)
 
 re:		fclean all
 

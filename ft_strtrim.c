@@ -6,7 +6,7 @@
 /*   By: hmorishi <hmorishi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 06:01:28 by hmorishi          #+#    #+#             */
-/*   Updated: 2021/04/22 13:58:41 by hmorishi         ###   ########.fr       */
+/*   Updated: 2021/04/28 08:58:00 by hmorishi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	search(char const *s1, char const *set, int dir)
 		i = 0;
 	else
 		i = ft_strlen(s1) - 1;
-	while (s1[i] && i >= 0)
+	while (i >= 0 && s1[i])
 	{
 		flag = 0;
 		j = -1;
